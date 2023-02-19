@@ -217,3 +217,29 @@ d2.paid_who()
 #وهي طريقة للتحدث بين الكلاس
 #implementation
 # هي كريقة لمعرفة مابداخل الكلاس وكبف يعمل
+#//////////////////////////////////////////////practice//////////
+class Student:
+    no_of_student=0
+    def __init__(self,name="none",age=0,course="none"):
+        self.__name = name    # ( __ ) -> private
+        self.__age = age
+        self.__course = course
+        Student.no_of_student+=1
+    def descripe(self):      # inistance method
+        print(f"my name is {self.__name} and my age is {self.__age} and my course is {self.__course} ")
+        #print("my name is {} and my age is {} and my course is {}".format(self.__name,self.__age,self.__course))
+    def set_name(self,new_name):
+        self.__name=new_name
+
+    def get_name(self):
+        return self.__name
+
+
+s1=Student("eslam",45,"Cs")
+s2=Student("eslam",40,"Ai")
+s3=Student("eslam",20,"math")
+s1.descripe()
+s1.__name="sss"
+s1.set_name("ahmed")
+print(s1.get_name())
+s1.descripe()
