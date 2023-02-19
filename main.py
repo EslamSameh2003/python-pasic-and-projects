@@ -1,5 +1,5 @@
-from math import *
-
+from math import * #module or library
+from datetime import date
 name = 'eslam'
 age =  20
 num =-2
@@ -53,6 +53,35 @@ print(f)
 # ////////////// Tuples /////////
 cordinate=(4,5)   # ال value لا تتغير
 print(cordinate)
+# //////////////////// args متغيرات  ///////////
+# زي ال tuple
+def sum(*args): # بتعمل براميترات زي ما انت عايز وقت الرن تيم
+    result = 0
+    for x in args:
+        result+=x
+    return result
+
+print(sum(4,7,4,5,8,5,7,5,8,4,6,58,1000000000))
+
+#////////////////////////// kwargs ( key ward arguments ) ///////////////
+# بتعمل زي ال dectionary
+# هيجمع ال values اللي ما بداخل ال key ward argument
+def use_kwargs(**kwargs):
+    result=""
+    for x in kwargs.values():
+        result+=x
+    return result
+print(use_kwargs(e="eslam",s=" samer",a=" ahmed"))
+
+def use_args_and_kwargs(x,y,*args,option=True,**kwargs):
+    print(x,y)
+    print(args)
+    print(option)
+    print(kwargs)
+
+x=use_args_and_kwargs(4,5,"1 arg","2 arg",option=True,e="eslam",s="samer",m="mahmoud")
+print(x)
+
 # ///////////////// function //////////
 # def + func_name():
      # indentation   مسافه فارغه
@@ -219,8 +248,8 @@ d2.paid_who()
 # هي كريقة لمعرفة مابداخل الكلاس وكبف يعمل
 #//////////////////////////////////////////////practice//////////
 class Student:
-    no_of_student=0
-    def __init__(self,name="none",age=0,course="none"):
+    no_of_student=0 # class attribute
+    def __init__(self,name="none",age=0,course="none"):  #constructor
         self.__name = name    # ( __ ) -> private
         self.__age = age
         self.__course = course
@@ -233,13 +262,19 @@ class Student:
 
     def get_name(self):
         return self.__name
+#///////////////// class method ///////////////////
+#@classmethod  بتقدر تعدل ع class attribute
+    @classmethod #decorator
+    def inittfrombearthtear(cls, name, birth_year):
+        return cls(name, date.today().year - birth_year) # بترجعلك الاسم و عمرك
 
+#//////// opjects /////////////
+s1=Student("Ahmed",45,"Cs")
+s2=Student.inittfrombearthtear("Eslam",2003)
+#s1.set_name("samer")
+#//////// print ///////////////
+#print(s1.get_name())
+s1.descripe()
+s2.descripe()
+#////////////////////////// static method ///////////////
 
-s1=Student("eslam",45,"Cs")
-s2=Student("eslam",40,"Ai")
-s3=Student("eslam",20,"math")
-s1.descripe()
-s1.__name="sss"
-s1.set_name("ahmed")
-print(s1.get_name())
-s1.descripe()
