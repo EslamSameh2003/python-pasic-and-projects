@@ -81,8 +81,37 @@ def use_args_and_kwargs(x,y,*args,option=True,**kwargs):
 
 x=use_args_and_kwargs(4,5,"1 arg","2 arg",option=True,e="eslam",s="samer",m="mahmoud")
 print(x)
-
-# ///////////////// function //////////
+#//////////////////// unpacking ////////////////////////////////////
+# بتوريك اللي جوه ال list بس من غير اقواس
+print("///////// unpacking ///////")
+list=[1,2,3]
+print(list)
+print(*list) #unpacking
+#//////////////// unpacking with args(tuples)/////
+def sum_args_with_unpacking(*args):
+    sum=0
+    for x in args:
+        sum+=1
+    return sum
+list1=[1,2,3,4,5,6]
+list2=[1,2,3,4,5,6]
+list3=[1,2,3,4,5,6]
+print(sum_args_with_unpacking(*list1,*list2,*list3))
+#////////////////
+a,*b,c=list1
+print(a) # a=1
+print(b) # b=[2,3,4,5]
+print(c) # c=6
+merge_list=(*list1,*list2)    # بتضع اكتر من lists  ف list واحده(بتدمجهم)
+print(merge_list)
+#//////////////// unpacking with kwargs(dictionary) ////////////
+dic1={"a":1,"b":2}
+dic2={"c":3,"d":4}
+merge_dictionary={**dic1,**dic2}
+print(merge_dictionary)
+str=[*"eslamsameh","eslam"]
+print(str)
+# ///////////////// function ///////////////////////////////
 # def + func_name():
      # indentation   مسافه فارغه
 """"
@@ -100,7 +129,7 @@ def muliple(nu):
     return m
 mu=muliple(5)
 print(mu)
-#///////////////// Conditions ////////////////
+#///////////////// Conditions ////////////////////////////////
 # and / or / and not / ==
 is_hungry=False
 wants_to_eat=True
