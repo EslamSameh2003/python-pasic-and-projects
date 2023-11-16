@@ -306,4 +306,3 @@ s2=Student.inittfrombearthtear("Eslam",2003)
 s1.descripe()
 s2.descripe()
 #////////////////////////// static method ///////////////
-
