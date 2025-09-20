@@ -392,8 +392,6 @@ dic_2={
         "one":"burp",
         "two":"nmap"
     }  
-
-
 }
 
 print(dic_2["lang"]['one'])
@@ -583,31 +581,75 @@ dic_7={
     "four":"40",
     "five":"50"
 }
+
+print(dic_7.items())
 print(dic_7["one"])
+
 print(dic_7.get("one"))
 
 for i in dic_7:
     print(i,dic_7[i])
 
+#////////////////////////////////////////////
+print(50*"*")
 
 
+num =[1,2,3,4,8,5,4,56,8]
+
+for i in num :
+    if i ==8:
+        continue
+    print(i)
+
+print(10*"*","break",10*"*")
+
+for i in num :
+    if i ==8:
+        break
+    print(i)
 
 
+print(10*"*","pass",10*"*")
+
+for i in num :
+    if i ==8:
+        pass
+    print(i)
+
+#////////////////////////////////////
+print(50*"*")
 
 
+dic_8={
+    "one":"10",
+    "two":"20",
+    "three":"30",
+    "four":"40",
+    "five":"50"
+}
 
+for dic_keys,dic_values in dic_8.items():
+    print(f"{dic_keys} --> {dic_values} ")
 
+print(50*"*")
 
+dic_10={ 
 
+    "lang":{
+        "one":"java",
+        "two":"js"
 
+    },
+    "tools":{
+        "one":"burp",
+        "two":"nmap"
+    }  
+}
 
-
-
-
-
-
-
-
+for dic_keys,dic_values in dic_10.items():
+    print(f"{dic_keys} :  ")
+    for child_keys,child_values in dic_values.items():
+        print(f"{child_keys} : {child_values} ")
 
 
 
