@@ -652,31 +652,55 @@ for dic_keys,dic_values in dic_10.items():
         print(f"{child_keys} : {child_values} ")
 
 
+#///////////////////////////////////////////////////
+print(50*"*")
+
+def name_func():
+    print("hi")
+
+
+name_func()
 
 
 
+def name_func2():
+    return 2*2
+
+print(name_func2())
 
 
 
+def name_func3(a,b): # a,b are parameters
+    return a*b
+
+result=name_func3(5,8) # 5,8 are argumesnts
+print(result)
+
+
+# func packing , unpacking argument *arg
+
+list_12=[4,5,6,7] 
+print(list_12)
+print(*list_12) # unpacking
+
+
+def name_func3(n1,n2,n3):
+    list_13=[n1,n2,n3]
+    for i in list_13:
+        print(i)
+
+
+name_func3('ahmed','axion','eslam')
 
 
 
+def name_func3(*list_13): # here u can add parameters if u want 
+    
+    for i in list_13:
+        print(i)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+name_func3('ahmed','axion','eslam',"sameh")
 
 
 
